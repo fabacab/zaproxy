@@ -110,7 +110,7 @@ if [ "$OS" = "Darwin" ]; then
   done
 
   # It's likely that -Xdock:icon would be ignored on other platforms, but this is known to work
-  exec java ${JMEM} -Xdock:icon="../Resources/ZAP.icns" -jar "${BASEDIR}/zap-dev.jar" "${ZAP_ARGS[@]}"
+  exec java ${JMEM} -Xdock:icon="../Resources/ZAP.icns" "${ZAP_ARGS[@]}" -jar "${BASEDIR}/zap-dev.jar"
 else
-  exec java ${JMEM} -jar "${BASEDIR}/zap-dev.jar" "$@"
+  exec java ${JMEM} "$@" -jar "${BASEDIR}/zap-dev.jar"
 fi
